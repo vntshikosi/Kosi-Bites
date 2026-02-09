@@ -1,69 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kosi Bites | Slushy Machine Hire</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #ffc107;
+            --dark-bg: #121212;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #f4f4f4;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--primary-gold); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://m.media-amazon.com/images/I/71N1N9T0u5L.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn-main {
+            background: var(--primary-gold);
+            color: black;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--primary-gold);
+        }
+
+        .card h3 {
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .price-hero {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 10px 0;
+            color: white;
+        }
+
+        .card ul { list-style: none; }
+        .card ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card ul li i { color: var(--primary-gold); font-size: 0.8rem; }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover { transform: translateY(-5px); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
 <body>
-    <header class="header">
-        <h1>Kosi Bites</h1>
-        <p class="tag">Machine Rentals • Events • Parties</p>
-    </header>
+
+    <nav>
+        <a href="index.html">Candyfloss</a>
+        <a href="popcorn.html">Popcorn</a>
+        <a href="slushy.html" style="color: var(--primary-gold);">Slushy</a>
+    </nav>
 
     <section class="hero">
-        <img src="https://www.smartcandy.co.za/wp-content/uploads/2022/01/Slush-Machine-For-Sale-SC-3-SHADOW-NEW.png" alt="Slushy Machine" />
-        <div class="hero-text">
-            <h2>Slushy Machine Hire</h2>
-            <p>Cold, colourful and refreshing — perfect for summer events, school fun days & brand activations.</p>
-            <a href="#pricing" class="btn">Book Now</a>
-        </div>
+        <img src="Kosi-Bites-Logo-Design.png" alt="Logo" style="width: 120px; margin-bottom: 20px;">
+        <h1>Premium Slushy Hire</h1>
+        <p>Cool down your event with our professional double-barrel slushy machines.</p>
+        <a href="https://wa.me/27614626618" class="btn-main">RESERVE NOW</a>
     </section>
 
-    <section class="content">
-        <h3>What’s Included</h3>
-        <ul>
-            <li>Triple-Barrel Slushy Machine</li>
-            <li>3 Flavours (± 80 cups)</li>
-            <li>Cups & Straws</li>
-            <li>Setup Guide</li>
-        </ul>
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fas fa-ice-cream"></i> What’s Included</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Double Barrel Slushy Machine</li>
+                    <li><i class="fas fa-check"></i> 10 Liters of Premium Syrup</li>
+                    <li><i class="fas fa-check"></i> 50 Cups & Straws</li>
+                    <li><i class="fas fa-check"></i> Delivery & Full Setup</li>
+                    <li><i class="fas fa-check"></i> Clean-up Service included</li>
+                </ul>
+            </div>
 
-        <h3>Why It Hits Different</h3>
-        <p>
-            Zero stress — the machine does all the heavy lifting.
-            Bright colours, icy drinks and instant vibes.
-        </p>
-    </section>
-
-    <section id="pricing" class="pricing">
-        <h2>Pricing</h2>
-        <div class="card">
-            <h3>Day Hire</h3>
-            <p class="price">R1200</p>
-            <p>Machine + Flavours + Cups</p>
-            <a href="https://wa.me/27614626618" class="btn secondary" target="_blank">Reserve Slot</a>
+            <div class="card" style="border: 2px solid var(--primary-gold);">
+                <div style="position: absolute; top: -15px; right: 20px; background: var(--primary-gold); color: black; padding: 2px 15px; border-radius: 10px; font-weight: 700; font-size: 0.8rem;">POPULAR</div>
+                <h3><i class="fas fa-glass-whiskey"></i> Full Day Hire</h3>
+                <div class="price-hero">Kosi Bites</div>
+                <p>Multiple flavors available. Perfect for large crowds.</p>
+                <br>
+                <a href="https://wa.me/27614626618" class="btn-main" style="width: 100%; text-align: center;">WHATSAPP FOR QUOTE</a>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Add-Ons</h3>
-            <ul>
-                <li>Extra Flavour – R120</li>
-                <li>Extra Cups – R150 (50 pack)</li>
-                <li>Operator - R250/hour</li>
-
-            </ul>
+        <div style="margin-top: 60px;">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--primary-gold);">Available Flavors</h2>
+            <div class="grid">
+                <div class="card" style="padding: 20px; text-align: center;">
+                    <h4>Strawberry Blue</h4>
+                    <p style="color: var(--primary-gold);">Vibrant & Sweet</p>
+                </div>
+                <div class="card" style="padding: 20px; text-align: center;">
+                    <h4>Classic Raspberry</h4>
+                    <p style="color: var(--primary-gold);">A Party Favorite</p>
+                </div>
+                <div class="card" style="padding: 20px; text-align: center;">
+                    <h4>Tropical Mango</h4>
+                    <p style="color: var(--primary-gold);">Refreshingly Exotic</p>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <div style="text-align:center; margin-top:20px;">
-        <a href="index.html">Candyfloss</a> |
-        <a href="popcorn.html">Popcorn</a> |
-        <a href="slushy.html">Slushy</a>
     </div>
 
+    <a href="https://wa.me/27614626618" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <footer>
-        <p>Kosi Bites © 2025</p>
+        <p>Premium cooling solutions for high-energy events. Quality guaranteed.</p>
+        <br>
+        Kosi Bites © 2025 | Premium Event Rentals
     </footer>
+
+</body>
+</html>
