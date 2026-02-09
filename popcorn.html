@@ -1,74 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kosi Bites | Popcorn Machine Hire</title>
-    <link rel="stylesheet" href="styles.css" />
-    <img src="Kosi-Bites-Logo-Design.png" alt="Logo" class="nav-logo">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popcorn Machine Hire | Kosi Bites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #ffc107;
+            --dark-bg: #121212;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #f4f4f4;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--primary-gold); }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://binuns.co.za/wp-content/uploads/2023/10/tmppmk0001.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .btn-main {
+            background: var(--primary-gold);
+            color: black;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--primary-gold);
+        }
+
+        .card h3 {
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card ul li i { color: var(--primary-gold); font-size: 0.8rem; }
+
+        /* Pricing Section */
+        .pricing-box {
+            text-align: center;
+            background: linear-gradient(145deg, #1a1a1a, #000);
+            padding: 50px;
+            border-radius: 30px;
+            margin-top: 40px;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin: 20px 0;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover { transform: translateY(-5px); }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
 <body>
-    <header class="header">
-        <h1>Kosi Bites</h1>
-        <p class="tag">Machine Rentals • Events • Parties</p>
-    </header>
+
+    <nav>
+        <a href="index.html">Candyfloss</a>
+        <a href="popcorn.html" style="color: var(--primary-gold);">Popcorn</a>
+        <a href="slushy.html">Slushy</a>
+    </nav>
 
     <section class="hero">
-        <img src="https://binuns.co.za/wp-content/uploads/2023/10/tmppmk0001.jpg" alt="A freshly popped popcorn machine with a bowl of warm, fluffy popcorn in a festive event setting, creating a joyful atmosphere for guests." />
-        <div class="hero-text">
-            <h2>Popcorn Machine Hire</h2>
-            <p>The ultimate crowd-pleaser for birthday parties, movie nights, activations & more.</p>
-            <a href="#pricing" class="btn">Book Now</a>
+        <img src="Kosi-Bites-Logo-Design.png" alt="Logo" style="width: 120px; margin-bottom: 20px;">
+        <h1>Popcorn Machine Hire</h1>
+        <p>The ultimate crowd-pleaser for birthdays, movie nights, and corporate events.</p>
+        <a href="https://wa.me/27614626618" class="btn-main">BOOK NOW</a>
+    </section>
+
+    <div class="container">
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fas fa-box-open"></i> What’s Included?</h3>
+                <ul>
+                    <li><i class="fas fa-check"></i> Professional Popcorn Machine</li>
+                    <li><i class="fas fa-check"></i> Popcorn Bags</li>
+                    <li><i class="fas fa-check"></i> Raw Corn + Oil Mix</li>
+                    <li><i class="fas fa-check"></i> Salt & Vinegar / Butter Salt</li>
+                    <li><i class="fas fa-check"></i> Professional Operator</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-star"></i> The Experience</h3>
+                <p>Fresh, hot, and perfectly buttery — our machine brings that iconic cinema-style experience to your event. It’s familiar, nostalgic, and guaranteed to pull a crowd from the first pop.</p>
+            </div>
         </div>
-    </section>
 
-    <section class="content">
-        <h3>What’s Included?</h3>
-        <ul>
-            <li>Popcorn Machine</li>
-            <li>Popcorn Bags</li>
-            <li>Raw Corn + Oil Mix</li>
-            <li>Salt & Vinger/Butter Salt</li>
-            <li>Operator</li>
-        
-        </ul>
+        <div class="pricing-box">
+            <h2>Reserve Your Machine</h2>
+            <p>High impact, zero hassle. Fast setup and smooth service.</p>
+            <div class="price-tag">Kosi Bites</div>
+            <p><i class="fas fa-truck"></i> Delivery: R4.50/km</p>
+            <br>
+            <a href="https://wa.me/27614626618" class="btn-main">WHATSAPP TO BOOK</a>
+        </div>
 
-        <h3>Why Everyone Loves It?</h3>
-        <p>
-            Fresh, hot, and perfectly buttery — this machine instantly brings that iconic cinema-style experience to your event. It’s familiar, nostalgic, and guaranteed to pull a crowd from the first pop.
-        </p> 
-        <p>   
-            At Kosi Bites, we keep things frictionless: fast setup, smooth service, and equipment you can rely on. No drama, no delays — just consistently great popcorn that elevates birthdays, movie nights, corporate activations, and everything in between. High impact, zero hassle.
-        </p>
-    </section>
-
-    <section id="bookings" class="bookings">
-       
-    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: 40px;">
-            <h2>Bookings</h2>
-    <div class="card" style="margin-top: 20px;">
-        <p>Charged at R10/km. Min R250 per trip</p>
-        <a href="https://wa.me/27614626618" class="btn secondary" target="_blank">Reserve Slot</a>
+        <div style="margin-top: 60px; text-align: center;">
+            <h3 style="margin-bottom: 30px;">Optional Add-Ons</h3>
+            <div class="grid">
+                <div class="card" style="padding: 20px;">
+                    <h4>Extra Corn & Oil</h4>
+                    <p style="color: var(--primary-gold);">R120</p>
+                </div>
+                <div class="card" style="padding: 20px;">
+                    <h4>Extra Bags (25pk)</h4>
+                    <p style="color: var(--primary-gold);">R60</p>
+                </div>
+                <div class="card" style="padding: 20px;">
+                    <h4>Extra Operator</h4>
+                    <p style="color: var(--primary-gold);">R250 / hour</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-        <div class="card">
-            <h3>Add-Ons</h3>
-            <ul>
-                <li>Extra Corn & Oil Pack – R120</li>
-                <li>Extra Popcorn Bags – R60 (25 pack)</li>
-                <li>Operator – R250/hour</li>
-            </ul>
-        </div>
-    </section>
-
-    <div style="text-align:center; margin-top:20px;">
-        <a href="index.html">Candyfloss</a> |
-        <a href="popcorn.html">Popcorn</a> |
-        <a href="slushy.html">Slushy</a>
-    </div>
+    <a href="https://wa.me/27614626618" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <footer>
-        <p>Kosi Bites © 2025</p>
+        Kosi Bites © 2025 | Premium Event Rentals
     </footer>
 
+</body>
+</html>
